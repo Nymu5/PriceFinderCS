@@ -9,53 +9,53 @@ class PriceFinder
         while (true)
         {
             String seperator = " | ";
-                    String end = "";
-                    Console.WriteLine("Enter Values: ");
-                    ArrayList multipleInput = new ArrayList();
-                    do
-                    {
-                        String input = Console.ReadLine();
-                        if (input == "") break; 
-                        multipleInput.Add(Double.Parse(input));
-                    } while (true);
+            String end = "";
+            Console.WriteLine("Enter Values: ");
+            ArrayList multipleInput = new ArrayList();
+            do
+            {
+                String input = Console.ReadLine();
+                if (input == "") break; 
+                multipleInput.Add(Double.Parse(input));
+            } while (true);
+            Console.Write("[");
+            for (int i = 0; i < multipleInput.Count; i++)
+            {
+                Console.Write($"{multipleInput[i]}{(i != multipleInput.Count-1 ? seperator : end)}");
+            }
+            Console.Write("]");
+            Console.WriteLine("\nEnter Value: ");
+            double searchValue = Double.Parse(Console.ReadLine()); 
+            multipleInput.Sort();
+            multipleInput.Reverse();
+            Console.WriteLine($"Find one (1)");
+            Console.WriteLine($"Find all (2)");
+            int method = Int16.Parse(Console.ReadLine());
+            if (method == 1)
+            {
+                ArrayList sum = findSum(searchValue, multipleInput, new ArrayList());
+                Console.Write("[");
+                for (int i = 0; i < sum.Count; i++)
+                {
+                    Console.Write($"{sum[i]}{(i != sum.Count-1 ? seperator : end)}");
+                }
+                Console.Write("]\n");
+            } else if (method == 2)
+            {
+                ArrayList sums = findAllSums(searchValue, multipleInput, new ArrayList(), new ArrayList());
+                foreach (ArrayList sum in sums)
+                {
                     Console.Write("[");
-                    for (int i = 0; i < multipleInput.Count; i++)
+                    for (int i = 0; i < sum.Count; i++)
                     {
-                        Console.Write($"{multipleInput[i]}{(i != multipleInput.Count-1 ? seperator : end)}");
+                        Console.Write($"{sum[i]}{(i != sum.Count-1 ? seperator : end)}");
                     }
-                    Console.Write("]");
-                    Console.WriteLine("\nEnter Value: ");
-                    double searchValue = Double.Parse(Console.ReadLine()); 
-                    multipleInput.Sort();
-                    multipleInput.Reverse();
-                    Console.WriteLine($"Find one (1)");
-                    Console.WriteLine($"Find all (2)");
-                    int method = Int16.Parse(Console.ReadLine());
-                    if (method == 1)
-                    {
-                        ArrayList sum = findSum(searchValue, multipleInput, new ArrayList());
-                        Console.Write("[");
-                        for (int i = 0; i < sum.Count; i++)
-                        {
-                            Console.Write($"{sum[i]}{(i != sum.Count-1 ? seperator : end)}");
-                        }
-                        Console.Write("]\n");
-                    } else if (method == 2)
-                    {
-                        ArrayList sums = findAllSums(searchValue, multipleInput, new ArrayList(), new ArrayList());
-                        foreach (ArrayList sum in sums)
-                        {
-                            Console.Write("[");
-                            for (int i = 0; i < sum.Count; i++)
-                            {
-                                Console.Write($"{sum[i]}{(i != sum.Count-1 ? seperator : end)}");
-                            }
-                            Console.Write("]\n");
-                        }
-                    }
-                    
-                    Console.WriteLine("Press enter to continue...");
-                    Console.ReadLine();
+                    Console.Write("]\n");
+                }
+            }
+            
+            Console.WriteLine("Press enter to continue...");
+            Console.ReadLine();
         }
     }
     static ArrayList findSum(double sum, ArrayList doubles, ArrayList combined)
