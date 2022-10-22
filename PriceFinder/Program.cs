@@ -23,15 +23,35 @@ class PriceFinder
         }
         Console.Write("]");
         Console.WriteLine("\nEnter Value: ");
+        double searchValue = Double.Parse(Console.ReadLine()); 
         multipleInput.Sort();
         multipleInput.Reverse();
-        ArrayList sum = findSum(Double.Parse(Console.ReadLine()), multipleInput, new ArrayList());
-        Console.Write("[");
-        for (int i = 0; i < sum.Count; i++)
+        Console.WriteLine($"Find one (1)");
+        Console.WriteLine($"Find all (2)");
+        int method = Int16.Parse(Console.ReadLine());
+        if (method == 1)
         {
-            Console.Write($"{sum[i]}{(i != sum.Count-1 ? seperator : end)}");
+            ArrayList sum = findSum(searchValue, multipleInput, new ArrayList());
+            Console.Write("[");
+            for (int i = 0; i < sum.Count; i++)
+            {
+                Console.Write($"{sum[i]}{(i != sum.Count-1 ? seperator : end)}");
+            }
+            Console.Write("]\n");
+        } else if (method == 2)
+        {
+            ArrayList sums = findAllSums(searchValue, multipleInput, new ArrayList(), new ArrayList());
+            foreach (ArrayList sum in sums)
+            {
+                Console.Write("[");
+                for (int i = 0; i < sum.Count; i++)
+                {
+                    Console.Write($"{sum[i]}{(i != sum.Count-1 ? seperator : end)}");
+                }
+                Console.Write("]\n");
+            }
         }
-        Console.Write("]\n");
+        
         Console.WriteLine("Press enter to finish...");
         Console.ReadLine();
     }
@@ -73,6 +93,40 @@ class PriceFinder
         }
 
         return new ArrayList();
+    }
+
+    public static ArrayList findAllSums(double sum, ArrayList doubles, ArrayList combined, ArrayList standard)
+    {
+        double i = 0;
+        foreach (double m in combined)
+        {
+            i += m;
+        }
+
+        if (i > sum)
+        {
+            return standard;
+        }
+
+        foreach (double n in doubles)
+        {
+            ArrayList newDoubles = new ArrayList(doubles);
+            newDoubles.Remove(n);
+            combined.Add(n);
+            double combined_sum = 0;
+            foreach (double m in combined)
+            {
+                combined_sum += m;
+            }
+            if (combined_sum == sum)
+            {
+                standard.Add(new ArrayList(combined));
+            }
+            standard = findAllSums(sum, newDoubles, combined, standard);
+            combined.Remove(n);
+        }
+
+        return standard;
     }
 }
 
