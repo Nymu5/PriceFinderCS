@@ -6,6 +6,8 @@ class PriceFinder
 {
     public static void Main(String[] args)
     {
+        String seperator = " | ";
+        String end = "";
         Console.WriteLine("Enter Values: ");
         ArrayList multipleInput = new ArrayList();
         do
@@ -14,21 +16,24 @@ class PriceFinder
             if (input == "") break; 
             multipleInput.Add(Double.Parse(input));
         } while (true);
-
-        foreach (var number in multipleInput)
+        Console.Write("[");
+        for (int i = 0; i < multipleInput.Count; i++)
         {
-            Console.Write($"{number}, ");
+            Console.Write($"{multipleInput[i]}{(i != multipleInput.Count-1 ? seperator : end)}");
         }
+        Console.Write("]");
         Console.WriteLine("\nEnter Value: ");
+        multipleInput.Sort();
+        multipleInput.Reverse();
         ArrayList sum = findSum(Double.Parse(Console.ReadLine()), multipleInput, new ArrayList());
         Console.Write("[");
-        String seperator = " | ";
-        String end = "";
         for (int i = 0; i < sum.Count; i++)
         {
             Console.Write($"{sum[i]}{(i != sum.Count-1 ? seperator : end)}");
         }
-        Console.Write("]");
+        Console.Write("]\n");
+        Console.WriteLine("Press enter to finish...");
+        Console.ReadLine();
     }
     static ArrayList findSum(double sum, ArrayList doubles, ArrayList combined)
     {

@@ -13,3 +13,18 @@
 /Users/nikoklemm/Documents/Coding Projects/C# Projects/PriceFinder/PriceFinder/obj/Debug/net6.0/PriceFinder.pdb
 /Users/nikoklemm/Documents/Coding Projects/C# Projects/PriceFinder/PriceFinder/obj/Debug/net6.0/PriceFinder.genruntimeconfig.cache
 /Users/nikoklemm/Documents/Coding Projects/C# Projects/PriceFinder/PriceFinder/obj/Debug/net6.0/ref/PriceFinder.dll
+D:\Coding Projects\PriceFinderCS\PriceFinder\bin\Debug\net6.0\PriceFinder.exe
+D:\Coding Projects\PriceFinderCS\PriceFinder\bin\Debug\net6.0\PriceFinder.deps.json
+D:\Coding Projects\PriceFinderCS\PriceFinder\bin\Debug\net6.0\PriceFinder.runtimeconfig.json
+D:\Coding Projects\PriceFinderCS\PriceFinder\bin\Debug\net6.0\PriceFinder.dll
+D:\Coding Projects\PriceFinderCS\PriceFinder\bin\Debug\net6.0\PriceFinder.pdb
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\PriceFinder.csproj.AssemblyReference.cache
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\PriceFinder.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\PriceFinder.AssemblyInfoInputs.cache
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\PriceFinder.AssemblyInfo.cs
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\PriceFinder.csproj.CoreCompileInputs.cache
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\PriceFinder.dll
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\refint\PriceFinder.dll
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\PriceFinder.pdb
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\PriceFinder.genruntimeconfig.cache
+D:\Coding Projects\PriceFinderCS\PriceFinder\obj\Debug\net6.0\ref\PriceFinder.dll
