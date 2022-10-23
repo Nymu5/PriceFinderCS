@@ -18,6 +18,8 @@ class PriceFinder
                 if (input == "") break; 
                 multipleInput.Add(Double.Parse(input));
             } while (true);
+            multipleInput.Sort();
+            multipleInput.Reverse();
             Console.Write("[");
             for (int i = 0; i < multipleInput.Count; i++)
             {
@@ -26,8 +28,6 @@ class PriceFinder
             Console.Write("]");
             Console.WriteLine("\nEnter Value: ");
             double searchValue = Double.Parse(Console.ReadLine()); 
-            multipleInput.Sort();
-            multipleInput.Reverse();
             Console.WriteLine($"Find one (1)");
             Console.WriteLine($"Find all (2)");
             int method = Int16.Parse(Console.ReadLine());
@@ -60,6 +60,12 @@ class PriceFinder
     }
     static ArrayList findSum(double sum, ArrayList doubles, ArrayList combined)
     {
+        Console.Write("[");
+        for (int x = 0; x < combined.Count; x++)
+        {
+            Console.Write($"{combined[x]}" + (x != combined.Count-1 ? " | " : ""));
+        }
+        Console.Write("]\n");
         double i = 0;
         foreach (double m in combined)
         {
