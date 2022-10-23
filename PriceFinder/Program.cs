@@ -26,9 +26,10 @@ class PriceFinder
             Console.Write("]");
             Console.WriteLine("\nEnter Value: ");
             double searchValue = Double.Parse(Console.ReadLine()); 
+            Console.Write($"Searching for {searchValue}!");
             multipleInput.Sort();
             multipleInput.Reverse();
-            Console.WriteLine($"Find one (1)");
+            Console.WriteLine($"\nFind one (1)");
             Console.WriteLine($"Find all (2)");
             int method = Int16.Parse(Console.ReadLine());
             if (method == 1)
@@ -43,6 +44,7 @@ class PriceFinder
             } else if (method == 2)
             {
                 ArrayList sums = findAllSums(searchValue, multipleInput, new ArrayList(), new ArrayList());
+                Console.WriteLine("------------ ERGEBNIS ------------");
                 foreach (ArrayList sum in sums)
                 {
                     Console.Write("[");
@@ -73,6 +75,13 @@ class PriceFinder
 
         foreach (double n in doubles)
         {
+            if (combined.Count > 0)
+            {
+                if (n >= (double)combined[combined.Count-1])
+                {
+                    continue;
+                }
+            }
             ArrayList newDoubles = new ArrayList(doubles);
             newDoubles.Remove(n);
             combined.Add(n);
@@ -80,9 +89,11 @@ class PriceFinder
             foreach (double m in combined)
             {
                 combined_sum += m;
+                Console.Write(m + " ");
             }
+            Console.Write("\n");
 
-            if (combined_sum == sum)
+            if (Math.Abs(combined_sum - sum) < 0.0001)
             {
                 return combined;
             }
@@ -113,15 +124,25 @@ class PriceFinder
 
         foreach (double n in doubles)
         {
+            if (combined.Count > 0)
+            {
+                if (n >= (double)combined[combined.Count-1])
+                {
+                    continue;
+                }
+            }
             ArrayList newDoubles = new ArrayList(doubles);
             newDoubles.Remove(n);
             combined.Add(n);
             double combined_sum = 0;
+            Console.Write("[");
             foreach (double m in combined)
             {
                 combined_sum += m;
+                Console.Write(m + " ");
             }
-            if (combined_sum == sum)
+            Console.Write("]\n");
+            if (Math.Abs(combined_sum - sum) < 0.0001)
             {
                 standard.Add(new ArrayList(combined));
             }
