@@ -37,6 +37,12 @@ class PriceFinder
     }
     static ArrayList findSum(double sum, ArrayList doubles, ArrayList combined)
     {
+        Console.Write("[");
+        for (int x = 0; x < combined.Count; x++)
+        {
+            Console.Write($"{combined[x]} + {(x != combined.Count-1 ? " | " : "")}");
+        }
+        Console.Write("]\n");
         double i = 0;
         foreach (double m in combined)
         {

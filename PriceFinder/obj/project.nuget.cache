@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I19q3Wul0eHlUWp0YtTqelzPCXh398zPkAXcOUkz4GEqrL5NKxdAMVP2BgTdNurQugVzKH527oyQr0VIdDBT/Q==",
+  "dgSpecHash": "y9Az1frfcRZS6g/UoVwQ5wjpmf4D9pIYaiXEl8oEHxyn+2EY5XBIhVZu69ROlhCsYQ0udhrWLQEIttFtczwFIg==",
   "success": true,
   "projectFilePath": "D:\\Coding Projects\\PriceFinderCS\\PriceFinder\\PriceFinder.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Gamin\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.3\\microsoft.netcore.app.runtime.win-x86.6.0.3.nupkg.sha512",
-    "C:\\Users\\Gamin\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.3\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.3.nupkg.sha512",
-    "C:\\Users\\Gamin\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.3\\microsoft.aspnetcore.app.runtime.win-x86.6.0.3.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
